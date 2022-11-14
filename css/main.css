@@ -1,0 +1,120 @@
+*, 
+*::after, 
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+.wrapperbox {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+@keyframes background {
+    100% {background-size: 4000px 1000px;}
+}
+
+.boxlist {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-image: url("../img/notepad-3693309_640.jpg");
+    background-position: 70% 0%;
+    animation: background 10s infinite alternate linear
+}
+
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.listToDo {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background-color: black;
+    border-radius: 8px;
+}
+
+.title {
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 0.4em 0.5em;
+}
+
+.inputbox, .taskbox {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20px;
+    gap: 15px;
+   
+}
+.taskbox {
+    margin-top: 1.4em;
+    width: 350px;
+    height: 200px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    grid-column: 1/4;
+    height: 35px;
+    margin-left: 0.4em;
+}
+
+.btn {
+    margin-right: 0.4em;
+    height: 35px;
+}
+
+.task {
+    grid-column: 1/4;
+    margin-top: 0.1em;
+    margin-left: 0.4em;
+    font-size: 2rem;
+    color: white;
+}
+
+.comletedbox {
+    position: absolute;
+    bottom: 4%;
+    left: 4%;
+    display: flex;
+    
+
+}
+.showCompleted {
+    color: white;
+    font-size: 2rem;
+    margin-left: 0.2em;
+}
+
+.checkInput {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5%;
+}
+
+.active {
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    .boxlist {
+        background-image: url("../img/notepad-3693309_1920.jpg");
+    }
+}
