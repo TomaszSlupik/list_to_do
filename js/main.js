@@ -17,19 +17,55 @@ const addTask = () => {
     taskbox.append(newTask)
     newTask.append(newcheck)
 
+    const checkInput = document.querySelectorAll('.checkInput')
+
+    checkInput.forEach(el=> el.addEventListener('click', ()=> {
+        if (el.checked == true) {
+            el.classList.add('TaskIsDone')
+            el.parentElement.classList.add('TaskIsDone')
+        }
+        else {
+            el.classList.remove('TaskIsDone')
+            el.parentElement.classList.remove('TaskIsDone')
+        }
+    }))
+
+
+
     tabletask.push(newTask, newcheck)
     console.log(tabletask)
-}
+
+    
+
+
+    }
 
 const taskComplited = () => {
     tabletask.forEach(el => {
-        el.classList.toggle('active')
-        console.log(el)
+        if (el.className == "checkInput TaskIsDone" &&  el.className == "task TaskIsDone") {
+            el.classList.remove('active')
+            console.log(el)
+        }   
+        else if (el.className == "checkInput") {
+            el.classList.add('active')
+        }
+
+        else if (el.className == "task") {
+            el.classList.add('active')
+        }
+
+         else if (el.className == "checkInput active" && el.className == "task active") {
+            el.classList.remove('active')
+            
+        }
     })
+
+    console.log(tabletask)
 }
-
-
 
 
 btn.addEventListener('click', addTask)
 checkboxcompletedinput.addEventListener('click', taskComplited)
+
+
+

@@ -78,6 +78,7 @@ html {
 .btn {
     margin-right: 0.4em;
     height: 35px;
+    cursor: pointer;
 }
 
 .task {
@@ -107,6 +108,7 @@ html {
     height: 20px;
     position: absolute;
     right: 5%;
+    cursor: pointer;
 }
 
 .active {
